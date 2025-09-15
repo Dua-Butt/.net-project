@@ -17,13 +17,13 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x'   # change if you use .NET 6 or 7
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore src/MyApp/MyApp.csproj
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build src/MyApp/MyApp.csproj --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test --no-build
+        run: dotnet test src/MyApp/MyApp.csproj --no-build --verbosity normal
