@@ -9,21 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-#code GitHub repo se robot ke computer me copy karta hai
+    # code GitHub repo se robot ke computer me copy karta hai
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-#Ye robot ko .NET tools install karne ke liye bolta hai
+      # Ye robot ko .NET tools install karne ke liye bolta hai
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'   # change if you use .NET 6 or 7
-#libraries download
+      # libraries download
       - name: Restore dependencies
         run: dotnet restore src/MyApp/MyApp.csproj
-#project compile
+      # project compile
       - name: Build
         run: dotnet build src/MyApp/MyApp.csproj --no-restore --configuration Release
-#unit tests run karta hai
+      # unit tests run karta hai
       - name: Test
         run: dotnet test src/MyApp/MyApp.csproj --no-build --verbosity normal
