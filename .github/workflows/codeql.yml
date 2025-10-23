@@ -33,10 +33,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore MyApp/MyApp.csproj
+        run: dotnet restore src/MyApp/MyApp.csproj
       
       - name: Build project
-        run: dotnet build MyApp/MyApp.csproj --no-restore --configuration Release
+        run: dotnet build src/MyApp/MyApp.csproj --no-restore --configuration Release
 
 
       - name: Perform CodeQL Analysis
