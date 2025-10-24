@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello from .NET Core with Nginx project!");
+app.MapGet("/", () => "Hello from .NET Core with Nginx project test!");
 
 app.Run("http://*:8080"); // Listen on port 8080 for Nginx proxy
